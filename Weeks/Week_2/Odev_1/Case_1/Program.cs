@@ -21,5 +21,29 @@ class Program
                 Console.WriteLine(sayi);
             }
         }
+
+
+        //Bir konsol uygulamasında kullanıcıdan pozitif iki sayı girmesini isteyin (k, m). Sonrasında kullanıcıdan n adet pozitif sayı girmesini isteyin. Kullanıcının girmiş olduğu sayılardan m'e eşit yada tam bölünenleri console'a yazdırın.
+        Console.WriteLine("İki adet sayı girişi yapınız");
+        Console.Write("k:");
+        int k = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine();
+        Console.Write("m:");
+        int m = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine();
+        int[] sayilar = new int[k];
+        Console.WriteLine(k+" adet sayı girişi yapınız");
+        Console.WriteLine("Girilen sayılar pozitif sayı olmalıdır!");
+        for (int i = 0; i < k; i++)
+        {
+            sayilar[i] = Convert.ToInt32(Console.ReadLine());
+        }
+        Console.WriteLine("Girilen sayılardan " +m + "'e eşit yada tam bölünen sayılar:");
+        foreach (int sayi in sayilar)
+        {
+            if(sayi == m || sayi%m==0){
+                Console.WriteLine(sayi);
+            }
+        }
     }
 }
