@@ -45,5 +45,25 @@ class Program
                 Console.WriteLine(sayi);
             }
         }
+
+
+        //Bir konsol uygulamasında kullanıcıdan pozitif bir sayı girmesini isteyin (p). Sonrasında kullanıcıdan n adet kelime girmesi isteyin. Kullanıcının girişini yaptığı kelimeleri sondan başa doğru console'a yazdırın.
+
+        Console.WriteLine("Lütfen bir sayı giriniz p:");
+        int p = Convert.ToInt32(Console.ReadLine());
+        string[] kelimeler = new string[p];
+        Console.WriteLine(p +" adet kelime girişi yapınız:");
+        for (int i = 0; i < p; i++)
+        {
+            Console.Write("Kelime "+(i+1)+":");
+            kelimeler[i] = Console.ReadLine();
+            Console.WriteLine();
+        }
+        Console.WriteLine("Girilen kelimeler sondan başa doğru:");
+        Array.Reverse(kelimeler);
+        foreach (string kelime in kelimeler)
+        {
+            Console.WriteLine(kelime);
+        } 
     }
 }
