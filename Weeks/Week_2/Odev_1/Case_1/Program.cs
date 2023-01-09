@@ -3,7 +3,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        //Bir konsol uygulamasında kullanıcıdan pozitif bir sayı girmesini isteyin(n). Sonrasında kullanıcıdan n adet pozitif sayı girmesini isteyin. Kullanıcının girmiş olduğu sayılardan çift olanlar console'a yazdırın.
+        //Case_1: Bir konsol uygulamasında kullanıcıdan pozitif bir sayı girmesini isteyin(n). Sonrasında kullanıcıdan n adet pozitif sayı girmesini isteyin. Kullanıcının girmiş olduğu sayılardan çift olanlar console'a yazdırın.
         Console.WriteLine("Lütfen dizi boyutu için bir sayı giriniz:");
         int n = Convert.ToInt32(Console.ReadLine());
         int[] dizi = new int[n];
@@ -23,7 +23,7 @@ class Program
         }
 
 
-        //Bir konsol uygulamasında kullanıcıdan pozitif iki sayı girmesini isteyin (k, m). Sonrasında kullanıcıdan n adet pozitif sayı girmesini isteyin. Kullanıcının girmiş olduğu sayılardan m'e eşit yada tam bölünenleri console'a yazdırın.
+        //Case_2: Bir konsol uygulamasında kullanıcıdan pozitif iki sayı girmesini isteyin (k, m). Sonrasında kullanıcıdan n adet pozitif sayı girmesini isteyin. Kullanıcının girmiş olduğu sayılardan m'e eşit yada tam bölünenleri console'a yazdırın.
         Console.WriteLine("İki adet sayı girişi yapınız");
         Console.Write("k:");
         int k = Convert.ToInt32(Console.ReadLine());
@@ -47,7 +47,7 @@ class Program
         }
 
 
-        //Bir konsol uygulamasında kullanıcıdan pozitif bir sayı girmesini isteyin (p). Sonrasında kullanıcıdan n adet kelime girmesi isteyin. Kullanıcının girişini yaptığı kelimeleri sondan başa doğru console'a yazdırın.
+        //Case_3: Bir konsol uygulamasında kullanıcıdan pozitif bir sayı girmesini isteyin (p). Sonrasında kullanıcıdan n adet kelime girmesi isteyin. Kullanıcının girişini yaptığı kelimeleri sondan başa doğru console'a yazdırın.
 
         Console.WriteLine("Lütfen bir sayı giriniz p:");
         int p = Convert.ToInt32(Console.ReadLine());
@@ -65,5 +65,32 @@ class Program
         {
             Console.WriteLine(kelime);
         } 
+
+
+        //Case_4: Bir konsol uygulamasında kullanıcıdan bir cümle yazması isteyin. Cümledeki toplam kelime ve harf sayısını console'a yazdırın.
+        Console.WriteLine("Lütfen bir cümle yazınız:");
+        string sentence = Console.ReadLine();
+        
+            
+        string s1 = sentence.Replace(","," ");
+        string s2 = s1.Replace("."," ");
+        string s3 = s2.Replace(";"," ");
+        string s4 = s3.Replace("*"," ");
+        string s5 = s4.Replace("-"," ");
+        string s6 = s5.Replace("_"," ");
+        string s7 = s6.Replace("?"," ");    
+        string s8 = s7.Replace("!"," ");
+        string s9 = s8.Replace(" ","");    
+
+        string[] words = s8.Split(" ");
+
+        words = words.Where(val => val != " ").ToArray();
+        
+        foreach (var item in words)
+        {
+            Console.WriteLine(item);        
+        }
+        Console.WriteLine("Girilen cümledeki kelime sayısı: "+words.Length);
+        Console.WriteLine("Girilen cümledeki harf sayısı: "+s9.Length);
     }
 }
